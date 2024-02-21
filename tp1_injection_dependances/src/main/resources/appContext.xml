@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- je demande de spring de me creer des classes -->
+    <!-- je demande a spring de me creer un objet de type DaoImpl que je peux le change tout le temp si je veux -->
+    <bean id="dao" class="org.example.dao.DaoImpl"></bean>
+    <bean id="metier" class="org.example.metier.MetierImpl">
+        <!-- setter => property -->
+        <property name="dao" ref="dao"></property>
+    </bean>
+</beans>
